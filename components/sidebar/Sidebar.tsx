@@ -45,7 +45,6 @@ const Sidebar = ({}: Props): JSX.Element => {
           </List>
         </Box>
       </Box>
-      Sidebar
     </Box>
   );
 };
