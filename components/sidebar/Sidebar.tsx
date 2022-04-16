@@ -1,8 +1,7 @@
 //comps
 import NextImage from "next/image";
-import NextLink from "next/link";
-import { Box, List, Divider, Center } from "@chakra-ui/layout";
-import { MenuItem } from "./components/MenuItem";
+import { Box, Divider } from "@chakra-ui/layout";
+import { NavMenu } from "./components/NavMenu";
 
 //constants
 import { NAV_ITEMS, MUSIC_MENU } from "./constants";
@@ -23,26 +22,12 @@ const Sidebar = ({}: Props): JSX.Element => {
           <NextImage src="/logo.svg" height={60} width={120} />
         </Box>
         <Box pb="20px">
-          <List spacing={2}>
-            {NAV_ITEMS.map(({ name, route, icon }) => (
-              <MenuItem key={name} name={name} route={route} icon={icon} />
-            ))}
-          </List>
+          <NavMenu navItems={NAV_ITEMS} />
         </Box>
-        <Box>
-          <List spacing={2}>
-            {MUSIC_MENU.map(({ name, route, icon }) => (
-              <MenuItem key={name} name={name} route={route} icon={icon} />
-            ))}
-          </List>
-        </Box>
+        <Box></Box>
         <Divider color="gray.800" />
         <Box height="66%" py="20px" overflowY="auto">
-          <List spacing={2}>
-            {MUSIC_MENU.map(({ name, route, icon }) => (
-              <MenuItem key={name} name={name} route={route} icon={icon} />
-            ))}
-          </List>
+          <NavMenu navItems={MUSIC_MENU} />
         </Box>
       </Box>
     </Box>
