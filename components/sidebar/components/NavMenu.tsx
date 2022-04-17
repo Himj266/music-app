@@ -22,7 +22,7 @@ export const NavMenu = ({ navItems }: Props) => (
     {navItems.map(({ name, route, icon }) => (
       <ListItem key={name} px="20px" fontSize="16px">
         <LinkBox>
-          <NextLink href={route} passHref>
+          <NextLink href={route ?? name} passHref>
             <LinkOverlay>
               <ListIcon as={icon} color="white" pr="20px" />
               {name}
