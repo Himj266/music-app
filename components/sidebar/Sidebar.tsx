@@ -3,12 +3,17 @@ import NextImage from "next/image";
 import { Box, Divider } from "@chakra-ui/layout";
 import { NavMenu } from "./components/NavMenu";
 
+//hooks
+import { usePlaylists } from "./hooks/usePlaylists";
+
 //constants
 import { NAV_ITEMS, MUSIC_MENU } from "./constants";
 
 interface Props {}
 
 const Sidebar = ({}: Props): JSX.Element => {
+  const { playlists, error } = usePlaylists();
+
   return (
     <Box
       width="100%"
@@ -27,7 +32,7 @@ const Sidebar = ({}: Props): JSX.Element => {
         <Box></Box>
         <Divider color="gray.800" />
         <Box height="66%" py="20px" overflowY="auto">
-          <NavMenu navItems={MUSIC_MENU} />
+          <NavMenu navItems={playlists} />
         </Box>
       </Box>
     </Box>
