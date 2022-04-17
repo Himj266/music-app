@@ -14,7 +14,7 @@ const PlayerLayout = ({ children }: Props) => {
       <Box position="absolute" top="0" width="250px" left="0">
         <Sidebar />
       </Box>
-      <Box ml="250" mb="200">
+      <Box ml="250" mb="200" height="calc(100vh - 100px)">
         {children}
       </Box>
       <Box position="absolute" bottom="0" left="0">
