@@ -22,7 +22,7 @@ const signIn = async (req: NextApiRequest, res: NextApiResponse) => {
           id: user.id,
           time: Date.now(),
         },
-        "hello", // use it in enviornment varisable
+        "hello", //todo use it in enviornment varisable
         { expiresIn: "8h" }
       );
 
@@ -37,8 +37,6 @@ const signIn = async (req: NextApiRequest, res: NextApiResponse) => {
         })
       );
       res.json(user);
-
-      console.log("himj", { user });
     } else {
       res.status(401);
       res.json({ error: "Email or password incorrect" });
