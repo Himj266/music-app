@@ -21,6 +21,7 @@ export const GradientLayout = ({
   subtitle,
   title,
   description,
+  children,
 }: Props) => (
   <Box
     height="100%"
@@ -45,5 +46,6 @@ export const GradientLayout = ({
         <Text fontSize="x-small">{description}</Text>
       </Box>
     </Flex>
+    <Box py="50px">{children}</Box>
   </Box>
 );
